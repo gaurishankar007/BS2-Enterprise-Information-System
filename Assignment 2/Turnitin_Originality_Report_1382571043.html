@@ -1,0 +1,353 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>CW2 Final Report Submission</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From Final Exam Replacement Coursework 2 Turnitin Submission (50%) CW2 (Moodle TT) (STW104KM-Enterprise Information Systems-M20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 09-Sep-2020 09:55 IST</li>
+                        <li>ID: 1382571043</li>
+                        <li>Word Count: 1630</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box green">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">7%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>7%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div id="last">
+	<div class="number-l">1</div>
+	<p>7% match (student papers from 04-Nov-2018)</p>
+
+	<a href="/paperInfo.asp?r=93.1305931374943&svr=23&session-id=5ac614305bc34050a34644e18f414922&lang=en_us&oid=oid:2:93871556&perc=7">Submitted to NCC Education on 2018-11-04</a>
+
+	</div>
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+Introduction The main goal of this report is to provide an optimal solution and management procedure of an online booking system for Itahari Arts which is an arts company that handles, Organize, plays and musicals. This system keeps track of all the Loyalty scheme Levels, Customer Details, Bookings, Tickets, Venues. For this, following activities will be done as given in the scenario. • Normalization of the given data will be done. • An ER diagram will be made for the system. • All normalized table will be created in SQL. • All data will be entered inside the tables. • SQL queries as given in the scenario will be written. • A perfect cloud computing service and software development model will be suggested. Normalization Section A Before rushing to the ER diagram, normalization of the given data has been shown below in a table. Table 1:Normalization UNF UNF Level 1NF 2NF 3NF Gauri <a href="javascript:openDSC(93871556, 2, '168');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="168" name="1" ><span class="b-ref">1</span>Loyalty Scheme Levels Loyalty Level<span> (PK) 1 </span>No of Bookings Required<span> 1 </span>Discount</a> 1 Table is already in 3NF. Gauri Customer Details Customer Ref 2 Gauri Customer Details <a href="javascript:openDSC(93871556, 2, '216');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="216" name="1" ><span class="b-ref">1</span>Customer First Name<span> 2 </span>Customer<span> Ref (PK) </span>Customer<span> Last </span>Name<span> 2 </span>Customer First Name<span> Address 2 </span>Customer Last Name</a> Contact Number 2 Address Email 2 Contact Number Loyalty Level (PK) 1 Email Loyalty Level (FK, N) Gauri Loyalty Scheme Levels Loyalty Level (PK) No of Bookings Required Discount Table is already in 3NF. Gauri Venues Venue ID (PK) 1 Venue Name 1 Address 1 Contact First Name 1 Contact Last Name 1 Tel Number 1 Capacity 1 Table is already in 3NF. Gauri <a href="javascript:openDSC(93871556, 2, '175');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="175" name="1" ><span class="b-ref">1</span>Bookings Booking Ref Booking Date Cust Ref<span> (PK) </span>Payment Method Event ID<span> Event </span>Description Full Price Venue Details Event Date<span> Event </span>Time Ticket QTY Discount</a> 2 Gauri Bookings Gauri Bookings 2 Booking Ref (PK) Booking Ref (PK) 1 Booking Date Booking Date 2 Cust Ref (FK) Cust Ref (FK) 2 Payment Method Payment Method 2 Event ID Event ID 2 Description Description 2 Full Price Full Price 2 Venue ID (FK) Venue ID (FK) 2 Event Date Event Date 2 Event Time Event Time 2 Ticket QTY Ticket QTY Discount (N) Discount (N) Gauri Customer Details Gauri Customer Details <a href="javascript:openDSC(93871556, 2, '199');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="199" name="1" ><span class="b-ref">1</span>Customer Ref (PK) Customer Ref (PK) Customer First Name Customer First Name Customer<span> Last </span>Name Customer<span> Last </span>Name</a> Address Address <a href="javascript:openDSC(93871556, 2, '263');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="263" name="1" ><span class="b-ref">1</span>Contact Number Contact Number Email Email Loyalty Level<span> (FK, N) </span>Loyalty Level (FK,</a> N) Gauri Venues Gauri Venues <a href="javascript:openDSC(93871556, 2, '289');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="289" name="1" ><span class="b-ref">1</span>Venue ID (PK) Venue ID (PK)<span> Venue </span>Name<span> Venue </span>Name<span> Address </span>Address</a><a href="javascript:openDSC(93871556, 2, '295');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="295" name="1" ><span class="b-ref">1</span>Contact First Name Contact First Name Contact Last<span> Name </span>Contact Last Name<span> Tel Number </span>Tel Number</a> Capacity Capacity Gauri Event Details Event ID (PK) Event Description Venue ID (FK) Full Price Gauri Venues Venue ID (PK) Venue Name Address Contact First Name Contact Last Name Tel Number Capacity Gauri Payments Payment ID (PK) Payment Method Gauri Customer Details Customer Ref (PK) Customer First Name Customer Last Name Address Contact Number Email Loyalty Level (FK, N) Gauri <a href="javascript:openDSC(93871556, 2, '179');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="179" name="1" ><span class="b-ref">1</span>Bookings Booking Ref<span> (PK) </span>Booking Date<span> Customer </span>Ref<span> (FK) </span>Event ID</a> (FK) Event Date Event Time Ticket QTY Payment ID (FK) Discount (N) Gauri Tickets Ticket No 2 Gauri Tickets Seat No 2 Ticket No (PK) Seat Row 2 Seat No Customer Name 2 Seat Row Booking Ref (PK) 1 Booking Ref (FK) Post Collect 2 Post Collect Gauri Bookings Booking Ref (PK) Booking Date Customer Ref (FK) Event ID (FK) Event Date Event Time Ticket QTY Payment ID (FK) Discount (N) Table is already in 3NF. Normalization is a database design technique whose main purpose is to eliminate duplicate and repeating data. Therefore, normalization is a process of dividing larger tables into smaller ones and linking them using relationships to reduce data redundancy and to eliminate undesirable Insertion, Update and Deletion Anomalies. 1NF, 2NF, 3NF are basic database normal forms (Guru99, 2020). ER Diagram An entity relation model for the proposed system for Itahari Arts has been shown below using bottom-up approach which is fully normalized to 3rd normal form. Figure 1: ER Diagram Creating and Showing Tables Database Figure 2: Creating Database Gauri Loyalty Scheme Levels Figure 3: Creating and showing Gauri Loyalty Scheme Levels Table Gauri Customer Details Figure 4:Creating and showing Gauri Customer Details Table Gauri Venues Figure 5:Creating and showing Gauri Venues Table Gauri Event Details Figure 6:Creating and showing Gauri Event Details table Gauri Payments Figure 7:Creating and showing Gauri Payments Table Gauri Bookings Figure 8:Creating and showing Gauri Bookings Table Gauri Tickets Figure 9:Creating and showing Gauri Tickets Table Inserting and Showing Data Gauri Loyalty Scheme Levels Figure 10: Inserting and Showing Data of Gauri Loyalty Scheme Levels Table Gauri Customer Details Figure 11:Inserting and Showing Data of Gauri Customer Details Table Gauri Venues Figure 12:Inserting and Showing Data of Gauri Venues Table Gauri Event Details Figure 13:Inserting and Showing Data of Gauri Event Details Table Gauri Payments Figure 14:Inserting and Showing Data of Gauri Payments Table Gauri Bookings Figure 15:Inserting and Showing Data of Gauri Bookings Table Gauri Tickets Figure 16:Inserting and Showing Data of Gauri Tickets Table Writing Queries Selecting <a href="javascript:openDSC(93871556, 2, '187');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="187" name="1" ><span class="b-ref">1</span>the first name and surname of customers in alphabetical order of surname</a> Figure 17:SQL Script and table Showing the number of all the bookings according to their Payment Methods Figure 18: SQL Script and table Changing the contact name for ‘The Imperial’ to Sudeep Shrestha Figure 19: SQL Script and table Deleting the venue ‘Mahjeri’ Figure 20: SQL Script and table Section B Cloud Computing Service Cloud computing is the delivery of different kind of computing services like software, storage, servers, database with the help of internet which helps the infrastructure run more efficiently and effectively. Cloud computing can be public, private and hybrid. Cloud computing services are listed below 1. Infrastructure as a service (IaaS), 2. Platform as a service (PaaS), 3. Software as a service (SaaS) (Azure, 2020). As Itahari Arts is arts company and the bookings are done by the receptionist, IaaS will be better for Itahari Arts because it is mainly for Sysadmins and Itahri Arts does not seem to be a larger company in which the application is used by the receptionist or the administrator which will do the booking. It will avoid the expense and complexity of buying and management of Itahari Arts’s infrastructure by providing a reliable, stable and supportable infrastructure. IaaS is very flexible and has enhanced scalability so that Itahari Arts will pay only what they will use, Itahari Arts will have full control over their application environment and deployment. Itahari Arts can purchase resource as they need. The main reason behind suggesting IaaS is because IaaS’s cost varies depending on consumption so that Itahari Arts will get cloud computing service in as much less as they want and they will have full management of their application by themselves and its services will be highly scalable. SaaS is on-demand service, platform independent and accessible via web browser or light weight client applications. PaaS is based on a programming language execution environment and it is domain for developers. I did not suggest SaaS because of Lack of control, Security and data concerns, Limited range of applications, Connectivity requirement, Performance and PaaS because of Data Security, Integration, Changes from vendor. Software Development Life Cycle Software development life cycle (SDLC) is a kind of loop which defines step by step processes involved in developing a software and it provides a detailed plan for building, testing, deploying an maintaining the software for production of high-quality product. Requirement gathering &amp; Analysis, Design, Implementation &amp; Coding, Testing, Deployment and Maintenance are different phases involved in SDLC. Waterfall Model, Prototype Model, Spiral Model, Iterative Incremental Model, Big Bang Model, Agile Model are different SDLC Models (Help, 2020). For Itahari Arts, V-Shaped SDLC Mode will be better because V-Shaped Model is better for small to medium projects in which requirements are defined clearly and fixed. This model is also known as Verification and Validation Model where development and testing go parallel. Different phases of V-Shaped Model are listed below. 1. Verification Phase: i. Requirement Analysis: All requirements are gathered around and then reviewing and analysis of the requirements are done. ii. System Design: System is design and documented in a design document after the requirements are cleared. iii. High-Level Design: Design of modules is done which defines the functionality between two modules. iv. Low-Level Design: Design of individual components is done. v. Coding: Development of coding is done. 2. Validation Phase: i. Unit Testing: Unit testing on individual components of Low-Level design is done using unit test cased. ii. Integration Testing: Integration Testing is done on the integrated modules of the High-Level design. iii. System Testing: The whole system and its functionality are tested. iv. Acceptance Testing: Testing of the requirements is done in the customer’s environment. Pros: 1. Simple and easy to understand. 2. Time saving due to parallel Verification and Validation which success over the waterfall model. 3. Gives high quality product due to systematic and disciplined. 4. Well for small project where requirements are easily understood. Cons: 1. Not good for ongoing projects. 2. Cost to high if the requirement change is needed at later stage. 3. No production of early prototype of the software. 4. Rigid and least flexible. References Azure, M., 2020. Azure.microsoft.com. [Online] Available at: https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/#cloud- deployment-types [Accessed 23 August 2020]. Guru99, 2020. Guru99.com. [Online] Available at: https://www.guru99.com/database-normalization.html [Accessed 21 August 2020]. Help, S. T., 2020. Softwaretestinghelp.com. [Online] Available at: https://www.softwaretestinghelp.com/software-development-life-cycle-sdlc/ [Accessed 23 August 2020]. 1 10173183 2 10173183 3 10173183 4 10173183 5 10173183 6 10173183 7 10173183 8 10173183 9 10173183 10 10173183 11 10173183 12 10173183 13 10173183 14 10173183 15 10173183 16 10173183 17 10173183 
+</div>
+</div>
+</body>
+</html>

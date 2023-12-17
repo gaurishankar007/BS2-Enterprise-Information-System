@@ -1,0 +1,348 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com:443">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>CW1 Final Report Submission</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From Final Coursework 1 Turnitin Submission(50%) CW1 (Moodle TT) (STW104KM-Enterprise Information Systems-M20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 09-Sep-2020 09:52 IST</li>
+                        <li>ID: 1382568541</li>
+                        <li>Word Count: 848</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box blue">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">0%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div><p id="mess">There are no matching sources for this report.</p></div>
+
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+Introduction The main purpose of this report is to build a Project Tracker software solution. A Project Tracker software is a system which tracks all the details of the projects, all the tasks in a project, all the users assigned to the tasks and projects, all the project managers assigned to the projects and the users who are not assigned and are currently free. To find a perfect solution for keeping all the functionality of the system and to make it more flexible, following diagrams of the system will be made which are listed below. 1. Use Case Diagram 2. Use Case Documentation 3. Class Diagram 4. Activity Diagram 5. Entity Relation Diagram Use Case Diagram A use case diagram showing all the relevant use cases and actors of the system has been shown below using UML notations. UML stands for Unified Modeling Language and it is a popular diagrammatic notation used for visualizing, constructing, specifying and documenting the components of software or non-software systems (Paradigm, 2020). Figure 1: Use Case Diagram Use Case Documentation A use case documentation for creating a task by the project manager has been shown below. Table 1:Use Case Documentation Class Diagram From the natural language analysis of the given scenario, some nouns and verbs has been identified which are then filtered and possible classes, attributes and methods for the system has been identified. This process has been shown below in a table. Table 2:Natural Language Analysis The class diagram for the possible classes, attributes and methods has been shown below. Figure 2: Class Diagram Activity Diagram An activity diagram for finding a user in the system, who is not yet assigned to any task and is currently free has been shown below along with the steps. Steps: 1. The user opens the login system 2. User logins with his account 3. System verifies the user’s account 4. System displays the user homepage if his account is verified or displays error if not verified 5. User opens the user page 6. System displays the users list along with the details 7. User searches users by the user status id 8. System verifies the user status id and if the id does not exist, then system displays error. If the id exists but does not matches with the required id, then system displays the users who are assigned. Finally, if the id matched with the required id, then system displays the users who are currently free. Figure 3: Activity Diagram Entity Relation Diagram An entity relationship diagram for this system to identify all relevant entities, attributes, suitable attribute types, primary keys, foreign keys, and cardinalities between entities has been shown below along with all the steps taken to come up with this 3rd form normalized ER diagram using top down approach. Normalization is a method of organizing the tables data in a specific way to reduce data redundancy and insertion, deletion, update anomalies. 1NF, 2NF, 3NF and BCNF are the most commonly used normalization. 3FN table is a table which is in 2FN and transitive functional dependency is removed (Singh, 2020). Step 1: Tables for the system (Not normalized) • Users table (columns: id, name, skill, user type, user status) • Tasks table (columns: id, name, users, estimated time, milestone, resource, start date, end date, status) • Projects table (columns: id, name, description, users, tasks, milestone, task completion percentage, start date, end date) Step 2: Tables for the system (Normalized) 1. A user might be normal at first and then assigned to project manager later. A user also might be free at first and then assigned to the tasks and projects later. Therefore, User table is divided into following tables. • User Status (id, name), User Type (id, name), Skill (id, name) • User Skill (user id, skill id) • User (id, name, user type id, status id) 2. A task might be distributed to multiple users and a project can have multiple tasks and multiple users. A task might be incomplete at first and then might be completed by the users later. Therefore, Task and Project table is divided into following tables. • Resource (id, name), Milestone (id, name), Progress Status (id, name) • Task Resource (task id, resource id) • Task (columns: id, name, milestone id, estimated time, start date, end date, project id, status id), User Task (user id, task id) • Project (columns: id, name, description, task completion status, start date, end date, project manager id) Figure 4: ER Diagram Conclusion A perfect solution for the Project Tracker software has been found with the help of Use Case diagram, Use Case Documentation, Class diagram, Activity diagram and ER diagram. Therefore, the system will have all its functionality and will be more flexible to operate without having any problem. References Paradigm, V., 2020. Visual Paradigm. [Online] Available at: https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-uml/ [Accessed 14 August 2020]. Singh, C., 2020. Begginners Book. [Online] Available at: https://beginnersbook.com/2015/05/normalization-in-dbms/ [Accessed 14 August 2020]. 1 10173183 2 10173183 3 10173183 4 10173183 5 10173183 6 10173183 7 10173183 8 10173183 9 10173183 10 10173183 11 10173183 
+</div>
+</div>
+</body>
+</html>
